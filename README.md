@@ -5,14 +5,14 @@ A retail store with arrays of products ranging from electronics to household app
 
 ## Insights from the Data
 
- Product Diversity and Pricing:
+- Product Diversity and Pricing:
 The store offers a variety of products across four categories: Electronics, Appliances, Kitchenware, and Accessories.
 Prices range from affordable items like headphones to more expensive products like laptops and TVs.
 The most expensive product is a TV priced at $1500, while headphones are the most affordable at $100.
-Supplier Relationships:
+- Supplier Relationships:
 The store sources products from a network of 10 suppliers, each specializing in different product categories.
 SupplierA supplies the most products, followed by SupplierB and SupplierC.
-Price Analysis:
+- Price Analysis:
 There are products with identical prices,the second-highest priced product is a TV, followed by a washing machine.
 Product Categories and Performance:
 Electronics is the most popular category, followed by Appliances.
