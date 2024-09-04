@@ -39,8 +39,8 @@ A retail store with arrays of products grouped by their category ranging from el
 - Create a stored procedure to fetch product details along with their category, supplier, and warehouse location, including error handling,here create view and error handling commands was used to capture abnormal inputs.
   ### Query
 ```
-SQLQUESTION 1
--(1) products with same price
+
+(1) products with same price
 SELECT * FROM  [RetailInventor].[dbo].[Products]
 WHERE Price IN  --(#1500 -only same price and to be gotten from querry below)
 (SELECT Price FROM [RetailInventor].[dbo].[Products]
@@ -48,19 +48,19 @@ GROUP BY Price
 HAVING COUNT(Price)>1)
 
 
- --QUE2 -Second highest price product and it's category
+ (2) -Second highest price product and it's category
  
  SELECT [ProductName],[CategoryID],[Price] FROM [RetailInventor].[dbo].[Products]
  ORDER BY Price DESC
  OFFSET 2 ROW     --jumps the two highest rows
  FETCH NEXT 1 ROW ONLY; --takes the highest next_row which is the second_max
 
- --QUE3 Get the maximum price per category and the product name
+ (3) Get the maximum price per category and the product name
  WITH DENSE_RANKING AS(
  SELECT *,DENSE_RANK() OVER(PARTITION BY CategoryID ORDER BY Price DESC ) RANKINGS FROM [RetailInventor].[dbo].[Products])
  SELECT [ProductName],[CategoryID],[Price] Max_price_per_category FROM DENSE_RANKING 
 WHERE RANKINGS=1
---no4(1)Supplier-wise count of products sorted by count in descending order.
+(4)Supplier-wise count of products sorted by count in descending order.
 SELECT COUNT(DISTINCT P.[ProductName])  Count_P,S.SupplierName
   FROM [RetailInventor].[dbo].[Products] P
   LEFT JOIN [RetailInventor].[dbo].[Supplier] S
@@ -68,7 +68,7 @@ ON P.SupplierID=S.SupplierID
 GROUP BY S.SupplierName
 
 
----QUE 5 FETCH ONLY THE FIRST WORD FROM THE PRODUCTNAME AND APPEND THE PRICE
+(5) FETCH ONLY THE FIRST WORD FROM THE PRODUCTNAME AND APPEND THE PRICE
 SELECT 
 CASE 
    -- The '% %' the shift btw the % shows conditions like first and last word then use of replace with parsename setat 2 will extract the first ones
@@ -79,16 +79,16 @@ CASE
    FROM [RetailInventor].[dbo].[Products]
 
    
---QUE 6-- FETCH PRODUCTS WITH ODD PRICES
+(6)-- FETCH PRODUCTS WITH ODD PRICES
 SELECT * FROM [RetailInventor].[dbo].[Products] 
   WHERE Price%2 !=0
 
-  --QUE7--- CREATE A VIEW TO FETCH PRODUCTS WITH SAME PRICE GREATER THAN $500
+  (7)--- CREATE A VIEW TO FETCH PRODUCTS WITH SAME PRICE GREATER THAN $500
   CREATE VIEW vw_sameSalaries AS
   SELECT ProductName,Price FROM [RetailInventor].[dbo].[Products] 
   WHERE Price >500 
 
-  --QUE 8 create a procedure to update product price by 15% where the category is 'Electronics' and the suplier name is not 'SupplierA'
+  (8) create a procedure to update product price by 15% where the category is 'Electronics' and the suplier name is not 'SupplierA'
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -111,7 +111,7 @@ ON S.SupplierID=P.SupplierID
 END
 GO
 
----QUE 9 CREATE A STORE PROCEDURE TO FETCH PRODUCT DETAILS ALONG WITH THEIR CATEGORY<SUPPLIER,AND WAREHOUSE LOCATION INCLUDING ERROR HANDLING
+(9) CREATE A STORE PROCEDURE TO FETCH PRODUCT DETAILS ALONG WITH THEIR CATEGORY<SUPPLIER,AND WAREHOUSE LOCATION INCLUDING ERROR HANDLING
 CREATE PROCEDURE sp_PerIncrease15I
 AS
 BEGIN
