@@ -38,7 +38,8 @@ A retail store with arrays of products grouped by their category ranging from el
 - Create a procedure to update product prices by 15% where the category is 'Electronics' and the supplier is not 'SupplierA',here create view and update was the major command used to obtain the result needed.
 - Create a stored procedure to fetch product details along with their category, supplier, and warehouse location, including error handling,here create view and error handling commands was used to capture abnormal inputs.
   ### Query
-  --- --QUESTION 1
+```
+SQLQUESTION 1
 -(1) products with same price
 SELECT * FROM  [RetailInventor].[dbo].[Products]
 WHERE Price IN  --(#1500 -only same price and to be gotten from querry below)
@@ -131,9 +132,9 @@ ON S.SupplierID=W.WarehouseID
    
  --  RAISEERROR (@ERRORMESSAGE,16,1);
    END CATCH
-   END     ---
+   END     ```
 
-## Results
+### Results
 
 - Product Diversity and Pricing:
 The store offers a variety of products across four categories: Electronics, Appliances, Kitchenware, and Accessories.
@@ -147,11 +148,11 @@ There are products with identical prices,the second-highest priced product is a 
 Product Categories and Performance:
 Electronics is the most popular category, followed by Appliances.
 Kitchenware and Accessories have lower sales volumes.
-## Image
+### Image
 
 ![RETAIL_PORT](https://github.com/user-attachments/assets/65120631-2be0-4c96-a7d8-b424ff6cbd0d)
 
-## Story_telling
+### Story_telling
 Imagine a customer walking into the store, searching for a new laptop.With the inventory system we can quickly find the desired product of need and check the stock level and inform the customer about the availability of the laptop. As the customer prepares to make a purchase, the system automatically updates the inventory records, ensuring that the laptop is accurately accounted for.
 Behind the scenes, the sales data is analysed to identify trends and optimize inventory levels.
 ### Recommendations
