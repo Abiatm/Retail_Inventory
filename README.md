@@ -37,7 +37,7 @@ A retail store with arrays of products grouped by their category ranging from el
 - Create a view to fetch products with a price greater than $500,the create view command was used to obtain stored of data on seperate table
 - Create a procedure to update product prices by 15% where the category is 'Electronics' and the supplier is not 'SupplierA',here create view and update was the major command used to obtain the result needed.
 - Create a stored procedure to fetch product details along with their category, supplier, and warehouse location, including error handling,here create view and error handling commands was used to capture abnormal inputs.
-  ### Query
+### Query
 ```
 
 (1) products with same price
@@ -132,8 +132,8 @@ ON S.SupplierID=W.WarehouseID
    
  --  RAISEERROR (@ERRORMESSAGE,16,1);
    END CATCH
-   END     ```
-
+   END
+```
 ### Results
 
 - Product Diversity and Pricing:
@@ -148,6 +148,7 @@ There are products with identical prices,the second-highest priced product is a 
 Product Categories and Performance:
 Electronics is the most popular category, followed by Appliances.
 Kitchenware and Accessories have lower sales volumes.
+
 ### Image
 
 ![RETAIL_PORT](https://github.com/user-attachments/assets/65120631-2be0-4c96-a7d8-b424ff6cbd0d)
