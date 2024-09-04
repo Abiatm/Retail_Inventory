@@ -24,6 +24,8 @@ A retail store with arrays of products grouped by their category ranging from el
 - Create a view to fetch products with a price greater than $500.
 - Create a procedure to update product prices by 15% where the category is 'Electronics' and the supplier is not 'SupplierA'.
 - Create a stored procedure to fetch product details along with their category, supplier, and warehouse location, including error handling.
+### Data Source
+Retail Inventory
 ### Tools Used
 - SSMS
 - MYSQL
