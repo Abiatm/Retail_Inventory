@@ -157,7 +157,7 @@ Kitchenware and Accessories have lower sales volumes.
 Imagine a customer walking into the store, searching for a new laptop.With the inventory system we can quickly find the desired product of need and check the stock level and inform the customer about the availability of the laptop. As the customer prepares to make a purchase, the system automatically updates the inventory records, ensuring that the laptop is accurately accounted for.
 Behind the scenes, the sales data is analysed to identify trends and optimize inventory levels.
 ### Recommendations
-- Awareness programs shouldbe done to increase sales
+- Awareness programs should be done.
 - more locations should be provided to enable easy accesibility
 - price evaluation and supplier satisfaction or need
 
